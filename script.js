@@ -3,7 +3,7 @@ let smartContract;
 let userAddress;
 
 // Define the smart contract address
-const contractAddress = "0x78343d5b366bfeB4010C2417fE28eF066F8ee49A";
+const contractAddress = "0x941ff96e78145897dEdae0AE60879ae09601A873";
 
 // Sepolia testnet chain ID
 const SEPOLIA_CHAIN_ID = "0xaa36a7"; // hex for 11155111
@@ -11,46 +11,70 @@ const SEPOLIA_CHAIN_ID = "0xaa36a7"; // hex for 11155111
 // Define the smart contract ABI (Application Binary Interface)
 const contractABI = [
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: "address",
-        name: "user",
-        type: "address",
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: "string",
-        name: "newString",
-        type: "string",
-      },
+        "indexed": false,
+        "internalType": "string",
+        "name": "newString",
+        "type": "string"
+      }
     ],
-    name: "StringSaved",
-    type: "event",
+    "name": "StringSaved",
+    "type": "event"
   },
   {
-    inputs: [],
-    name: "getString",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
+    "inputs": [],
+    "name": "getString",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [{ internalType: "string", name: "_string", type: "string" }],
-    name: "saveString",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_string",
+        "type": "string"
+      }
+    ],
+    "name": "saveString",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [{ internalType: "address", name: "", type: "address" }],
-    name: "savedStrings",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
-  },
-];
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "savedStrings",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
 
 // This function connects the website to MetaMask and identifies the user's account.
 async function connect() {
