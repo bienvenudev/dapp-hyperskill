@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+      type="application/javascript"
+    ></script>
+    <script src="script.js"></script>
+    <title>Blockchain String Saver | DApp</title>
+    <meta
+      name="description"
+      content="A DApp for saving strings on the blockchain"
+    />
+  </head>
+  <style>
+    /* Define common variables */
+:root {
+  --flex-center: {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  };
+}
+
+body {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Use a more descriptive class name */
+.grid-layout {
+  display: block; /* Changed from grid to block */
+}
+
+/* Combine common properties */
+.grid-item {
+  @apply --flex-center;
+}
+
+.info-section {
+  /* Removed grid-area definition */
+}
+
+.connect-section {
+  background-color: #ffd700;
+  padding-bottom: 0.625rem;
+  @apply --flex-center;
+}
+
+.input-section {
+  background-color: DodgerBlue;
+  padding-bottom: 0.625rem;
+  @apply --flex-center;
+}
+
+.retrieve-section {
+  background-color: Tomato;
+  @apply --flex-center;
+}
+
+/* Centering text for titles */
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+a {
+  padding-bottom: 0.625rem;
+}
+
+/* Centering content within each section */
+.info-section,
+.connect-section,
+.input-section,
+.retrieve-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* This will ensure that even the text within p tags and other elements is centered */
+}
+
+/* Centering the input field */
+.input-section input {
+  margin: 10px 0; /* Adding some margin for spacing */
+  align-self: center; /* This will center the input field if the parent is a flex container */
+}
+
+button {
+  width: 150px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #18e9db;
+  color: #7c7272;
+  border: none; /* Removing the default border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+button:hover {
+  background-color: #2980b9; /* Darker shade of the original color */
+  color: #e5d4d4;
+  transform: scale(1.05); /* Slightly scale the button */
+}
+
+button:active {
+  transform: scale(
+    0.95
+  ); /* Slightly reduce the size when the button is actively clicked */
+}
+
+label {
+  padding: 20px;
+}
+  </style>
+  <body>
+    <!-- what should be the name of the git repo for this -->
+    <!-- Main content: This is divided into several sections:
+
+    An informational paragraph about the DApp.
+    A section to connect the user's MetaMask wallet.
+    An input section where users can input and save a string to the blockchain.
+    A section where users can retrieve the string they saved.
+
+Each section is clearly labeled and organized, making it easy for users to understand and interact with the DApp. -->
+    <div class="grid-layout">
+      <div class="info-section grid-item">
+        <h1>Welcome to the Blockchain String Saver DApp!</h1>
+        <p>
+          This decentralized application allows you to save a string on the
+          blockchain and retrieve it later. Connect your MetaMask wallet to get
+          started.
+        </p>
+      </div>
+
+      <div class="connect-section grid-item">
+        <h2>Connect Your Wallet</h2>
+        <button id="connectButton">Connect MetaMask</button>
+      </div>
+
+      <div class="input-section grid-item">
+        <h2>Save a String</h2>
+        <input type="text" id="stringInput" placeholder="Enter a string to save" />
+        <button id="saveButton">Save to Blockchain</button>
+      </div>
+
+      <div class="retrieve-section grid-item">
+        <h2>Retrieve Your String</h2>
+        <button id="retrieveButton">Retrieve from Blockchain</button>
+        <p id="retrievedString"></p>
+      </div>
+    </div>
+  </body>
+</html>

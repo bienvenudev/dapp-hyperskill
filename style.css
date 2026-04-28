@@ -1,0 +1,105 @@
+/* Define common variables */
+:root {
+  --flex-center: {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  };
+}
+
+body {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Use a more descriptive class name */
+.grid-layout {
+  display: block; /* Changed from grid to block */
+}
+
+/* Combine common properties */
+.grid-item {
+  @apply --flex-center;
+}
+
+.info-section {
+  /* Removed grid-area definition */
+}
+
+.connect-section {
+  background-color: #ffd700;
+  padding-bottom: 0.625rem;
+  @apply --flex-center;
+}
+
+.input-section {
+  background-color: DodgerBlue;
+  padding-bottom: 0.625rem;
+  @apply --flex-center;
+}
+
+.retrieve-section {
+  background-color: Tomato;
+  @apply --flex-center;
+}
+
+/* Centering text for titles */
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+a {
+  padding-bottom: 0.625rem;
+}
+
+/* Centering content within each section */
+.info-section,
+.connect-section,
+.input-section,
+.retrieve-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* This will ensure that even the text within p tags and other elements is centered */
+}
+
+/* Centering the input field */
+.input-section input {
+  margin: 10px 0; /* Adding some margin for spacing */
+  align-self: center; /* This will center the input field if the parent is a flex container */
+}
+
+button {
+  width: 150px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #18e9db;
+  color: #7c7272;
+  border: none; /* Removing the default border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+button:hover {
+  background-color: #2980b9; /* Darker shade of the original color */
+  color: #e5d4d4;
+  transform: scale(1.05); /* Slightly scale the button */
+}
+
+button:active {
+  transform: scale(
+    0.95
+  ); /* Slightly reduce the size when the button is actively clicked */
+}
+
+label {
+  padding: 20px;
+}
