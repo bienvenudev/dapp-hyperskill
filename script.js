@@ -1,3 +1,6 @@
+// Global smart contract instance (set after wallet connection)
+let smartContract;
+
 // Define the smart contract address
 const contractAddress = "0x78343d5b366bfeB4010C2417fE28eF066F8ee49A";
 
@@ -106,3 +109,10 @@ async function getString() {
   console.log(`Retrieved string from blockchain: "${string}"`);
   alert(`Your saved string is: ${string}`);
 }
+
+// Wire up button click events once the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("connectButton").addEventListener("click", connect);
+  document.getElementById("saveButton").addEventListener("click", saveString);
+  document.getElementById("retrieveButton").addEventListener("click", getString);
+});
